@@ -84,7 +84,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $eredmeny = $elso * $masodik;
                 break;
             case "/":
-                $eredmeny = $elso / $masodik;
+                if ($masodik == 0) {
+                    $eredmeny = "∞";
+                } else {
+                    $eredmeny = $elso / $masodik;
+                }
                 break;
             default:
                 echo "Ismeretlen művelet!";
